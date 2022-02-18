@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{% filter upper %}{{ article.title }}{% endfilter %}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.date }}</p>
+        <p>{{ article.text }}</p>
+
+    </div>
+{% endblock %}

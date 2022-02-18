@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content %}
+<h2>Каталог товаров!</h2>
+    {% if catalog %}
+        {% for el in catalog %}
+            <div>
+                <h3>{{ el.name }}</h3>
+                <img src="{{ MEDIA_URL }}{{ el.image.url }}" alt="Princ">
+                <p>{{ el.category }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+           <p>У вас пока нет товаров</p>
+    {% endif %}
+{% endblock %}
