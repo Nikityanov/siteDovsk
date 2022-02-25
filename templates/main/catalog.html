@@ -4,11 +4,16 @@
 
 {% block content %}
 <h2>Каталог товаров!</h2>
+
+    {% for category in categories %}
+    <a href= "/catalog/{{ category.pk }}">{{ category.name }}</a>
+    {% endfor %}
+
     {% if catalog %}
         {% for el in catalog %}
             <div>
                 <h3>{{ el.name }}</h3>
-                <img src="{{ MEDIA_URL }}{{ el.image.url }}" alt="Princ">
+                <img src="{{ MEDIA_URL }}{{ el.image.url }}" alt="">
                 <p>{{ el.category }}</p>
             </div>
         {% endfor %}

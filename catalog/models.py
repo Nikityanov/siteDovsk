@@ -18,8 +18,8 @@ class Product(models.Model):
     name = models.CharField('Название продукта', max_length=100)
     image = models.ImageField(upload_to='images/')
     description = models.TextField()
-    created = models.DateTimeField(auto_now_add=True)
-    update = models.DateTimeField(auto_now_add=True)
+    productivity = models.DecimalField(default=True, max_digits=10, decimal_places=2)
+    price = models.DecimalField(default=True ,max_digits=10, decimal_places=2)
 
     def __str__(self):
         return self.name
