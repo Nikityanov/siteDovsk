@@ -4,25 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cuprum&display=swap');
+        </style>
 </head>
 <body>
-    <aside>
-        <img src="{% static 'main/img/logo.png' %}" alt="Лого">
-        <span class="logo">Довск</span>
-        <h3>Навигация</h3>
-        <ul>
-            <a href="{% url 'home' %}"><li>Главная</li></a>
-            <a href="{% url 'news' %}"><li>Новости</li></a>
-            <a href="{% url 'catalog' %}"><li>Каталог</li></a>
-            <a href="{% url 'contacts' %}"><li>Контакты</li></a>
-
-        </ul>
-    </aside>
+    <div class="header">
+        <div class="logo_wrap">
+            <div id="header_logo"><img src="/static/main/img/logo.png"></div>
+            <div id="header_text">ГОМЕЛЬСКАЯ ОБЛАСТНАЯ СЕЛЬСКОХОЗЯЙСТВЕННАЯ ОПЫТНАЯ СТАНЦИЯ РУП НАН БЕЛАРУСИ</div>
+        </div>
+        <ul class="navi">
+            <a class="navi_lnk" href="{% url 'home' %}"><li>Главная</li></a>
+            <a class="navi_lnk" href="{% url 'news' %}"><li>Новости</li></a>
+            <a class="navi_lnk" href=""><li>Отделы</li></a>
+            <a class="navi_lnk" href="{% url 'catalog' %}"><li>Продукция</li></a>
+            <a class="navi_lnk" href="{% url 'contacts' %}"><li>Контакты</li></a>
+        </ul> 
+        <div class="phone">
+            <div id="phone_icon"></div>
+            <a class="phone_lnk" href="tel:+375 23 394 44 44">+375 23 394 44 44</a>
+        </div>
+    </div>
+    
     <main>
         {% block content %}
         {% endblock %}
     </main>
+    <div class="footer">
+        <div><a href="email: email@mail.com">Email@mail.com</a></div>
+        <div><a href="tel: +375 23 394 44 44">+375 23 394 44 44</a></div>
+        <div>Developed by Yura&Dima Cool&Funny crew in 2022</div>    
+    </div>
 </body>
 </html>

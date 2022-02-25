@@ -1,58 +1,137 @@
 body {
-    background: lightslategrey;
+    margin: 0;
+    padding: 0;
+    background: #D9D0C0;
 }
 
-aside {
-    float: left;
-    background: #4d4d4d;
-    width: 17%;
-    padding: 2%;
-    height: 100vh;
-    color: azure;
-    border-right: 5px solid black;
+.header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    max-width: fit-content;
+    height: 70px;
+    background: #423E3B;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
-aside img {
-    width: 100px;
-    float: left;
+.logo_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-aside .logo {
-    font-size: 40px;
-    margin-left: 10px;
-    font-weight: bold;
-    position: relative;
-    top: 25px;
+#header_logo {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-aside h3 {
-    margin-top: 50px;
-    font-size: 28px;
-}
-
-aside ul {list-style: none}
-aside ul li {
-    color: #fff;
-    display: block;
-    margin-top: 20px;
-    transition: transform .6s ease;
-}
-
-aside ul li:hover, aside ul a:hover {
-    color: #eb5959;
+#header_text {
     text-decoration: none;
-    transform: scale(1.1);
+    font-size: 15px;
+    font-family: Cuprum;
+    color:#D9D0C0;
 }
 
-main .features {
-    float: left;
-    color: white;
-    margin-top: 100px;
+.navi {
+    display:flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    list-style: none;
+}
+
+.navi li{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: Cuprum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: #D9D0C0;
+    justify-content: center;
+    align-items: center;
+}
+
+.navi_lnk {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    width: 75%;
+    text-decoration: none;
 }
 
-main ul li, p, p {
-    margin-left: 15px;
-    text-align: left;
+.navi_lnk:hover {
+    text-decoration: none;
+    background: #312f2c;
+}
+
+.navi li:hover {
+    font-size: 30px;
+}
+
+.phone {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone_lnk {
+    text-decoration: none;
+    font-family: Cuprum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    text-align: center;
+    color: #E6DCCB;
+}
+
+.phone:hover {
+    background: #312f2c;
+}
+
+.phone_lnk:hover{
+    font-size: 30px;
+}
+
+#phone_icon {
+    width: 35px;
+    height: 35px;
+    background: url(/static/main/img/Phone.png);
+    margin-right: 10px;
+}
+
+main {
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+.footer {
+    width: 100%;
+    height: 140px;
+    background: #423E3B;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.footer a{
+    margin-top: 5px;
+    text-decoration: none;
+    color: #D9D0C0;
+}
+
+.features {
+    font-size: 23px;
 }
