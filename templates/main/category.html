@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h2>Каталог товаров!</h2>
+
+    {% for category in categories %}
+    <a href= "/catalog/{{ category.pk }}">{{ category.name }}</a>
+    {% endfor %}
+
+    {% for el in catalog %}
+        <div>{{ el.category }}</div>
+        <img src="{{ MEDIA_URL }}{{ el.image.url }}" alt="">
+        <div>{{ el.description }}</div>
+        <div>{{ el.price }} руб</div>
+        <div>{{ el.productivity }} т/га</div>
+    {% endfor %}
+{% endblock %}
