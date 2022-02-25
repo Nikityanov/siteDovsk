@@ -7,3 +7,7 @@ def index(request):
 def about(request):
     data = {'title':'Контакты'}
     return render(request, 'main/contacts.html', data)
+
+def departments(request):
+    data = {'title':'Отделы'}
+    return render(request, 'main/departments.html', data)

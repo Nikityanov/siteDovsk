@@ -5,7 +5,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('contacts', views.about, name='contacts')
+    path('contacts', views.about, name='contacts'),
+    path('departments', views.departments, name='departments'),
 ]
 
 if settings.DEBUG:
