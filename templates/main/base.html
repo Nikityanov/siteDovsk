@@ -8,34 +8,39 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cuprum&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lora&family=Manrope:wght@700&display=swap');
         </style>
 </head>
 <body>
     <div class="header">
-        <div class="logo_wrap">
-            <div id="header_logo"><img src="/static/main/img/logo.png"></div>
-            <div id="header_text">ГОМЕЛЬСКАЯ ОБЛАСТНАЯ СЕЛЬСКОХОЗЯЙСТВЕННАЯ ОПЫТНАЯ СТАНЦИЯ РУП НАН БЕЛАРУСИ</div>
-        </div>
+        <div class="header-wrapper">
+            <div class="logo_wrap">
+                <div id="header_logo"><img src="/static/main/img/logo.png"></div>
+            </div>
         <ul class="navi">
             <a class="navi_lnk" href="{% url 'home' %}"><li>Главная</li></a>
-{#            <a class="navi_lnk" href="{% url 'news' %}"><li>Новости</li></a>#}
+{#          <a class="navi_lnk" href="{% url 'news' %}"><li>Новости</li></a>#}
             <a class="navi_lnk" href="{% url 'departments' %}"><li>Отделы</li></a>
             <a class="navi_lnk" href="{% url 'catalog' %}"><li>Продукция</li></a>
             <a class="navi_lnk" href="{% url 'contacts' %}"><li>Контакты</li></a>
         </ul> 
         <div class="phone">
             <div id="phone_icon"></div>
-            <a class="phone_lnk" href="tel:+375 23 394 44 44">+375 23 394 44 44</a>
-        </div>
+            <a class="phone_lnk" href="tel:+375 2339 774 62">+375 2339 774 62</a>
+        </div></div>    
     </div>
     
     <main>
-        {% block content %}
-        {% endblock %}
+        <div class="main-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div> 
     </main>
     <div class="footer">
-        <div><a href="email: email@mail.com">Email@mail.com</a></div>
-        <div><a href="tel: +375 23 394 44 44">+375 23 394 44 44</a></div>
+        <div><a href="email: goshos-nan@yandex.by">goshos-nan@yandex.by</a></div>
+        <div><a href="tel:+375 2339 774 62">+375 2339 774 62</a></div>
         <div>Developed by Yura&Dima Cool&Funny crew in 2022</div>    
     </div>
 </body>

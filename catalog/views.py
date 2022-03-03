@@ -12,4 +12,4 @@ def by_category(request, id_category:int):
     categories = Category.objects.all()
     current_category = Category.objects.get(id=id_category)
     context = {'catalog': catalog, 'categories': categories, 'current_category':current_category}
-    return render(request, 'main/category.html', context)
+    return render(request, 'main/catalog.html', context)

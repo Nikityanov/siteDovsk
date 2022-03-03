@@ -3,21 +3,45 @@
 {% block title %}Каталог{% endblock %}
 
 {% block content %}
-<h2>Каталог товаров!</h2>
-
+<div class="splash" id="splash-small" id="splash-catalog">
+  <div class="splash-fon">
+      <div class="splash-text">
+          <h1>Каталог продукции</h1>
+      </div>
+  </div>
+</div>
+<div class="catalog-navigation">
+  <div class="catalog-navigation-wrapper">
+    <a class="catalog-navigation-link" href="{% url 'catalog' %}">Все</a>
     {% for category in categories %}
-    <a href= "/catalog/{{ category.pk }}">{{ category.name }}</a>
-    {% endfor %}
+    <a class="catalog-navigation-link" href="/catalog/{{ category.pk }}">{{ category.name }}</a>
+      {% endfor %}
+  </div>
+</div>
 
+    
+<div class="catalog">
+  <div class="catalog-wrapper">
     {% if catalog %}
         {% for el in catalog %}
-            <div>
-                <h3>{{ el.name }}</h3>
-                <img src="{{ MEDIA_URL }}{{ el.image.url }}" alt="">
-                <p>{{ el.category }}</p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <h2 class="flip-card-entity-name">{{ el.category }} "{{ el.name }}"</h2>
+                    <img src="{{ MEDIA_URL }}{{ el.image.url }}" alt="" style="width: 100%;height: 100%;">
+                    <p class="flip-card-entity-price"> {{ el.price }} р.</p>
+                  </div>
+                  <div class="flip-card-back">
+                    <p class="flip-card-description">{{ el.description }}</p>
+                  </div>
+                </div>
             </div>
         {% endfor %}
     {% else %}
            <p>У вас пока нет товаров</p>
     {% endif %}
+  </div>
+    
+</div>
+    
 {% endblock %}
