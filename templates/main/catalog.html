@@ -3,7 +3,7 @@
 {% block title %}Каталог{% endblock %}
 
 {% block content %}
-<div class="splash" id="splash-small" id="splash-catalog">
+<div class="splash" id="splash-small">
   <div class="splash-fon">
       <div class="splash-text">
           <h1>Каталог продукции</h1>
@@ -19,8 +19,18 @@
   </div>
 </div>
 
+<div class="dropdown">
+  <button class="dropdown-button">Категории</button>
+    <div class="dropdown-content">
+      <a class="catalog-navigation-link" href="{% url 'catalog' %}">Все</a>
+      {% for category in categories %}
+      <a class="catalog-navigation-link" href="/catalog/{{ category.pk }}">{{ category.name }}</a>
+        {% endfor %}
+    </div>      
+</div>
+
     
-<div class="catalog">
+<div class="main-layout">
   <div class="catalog-wrapper">
     {% if catalog %}
         {% for el in catalog %}
@@ -29,7 +39,6 @@
                   <div class="flip-card-front">
                     <h2 class="flip-card-entity-name">{{ el.category }} "{{ el.name }}"</h2>
                     <img src="{{ MEDIA_URL }}{{ el.image.url }}" alt="" style="width: 100%;height: 100%;">
-                    <p class="flip-card-entity-price"> {{ el.price }} р.</p>
                   </div>
                   <div class="flip-card-back">
                     <p class="flip-card-description">{{ el.description }}</p>

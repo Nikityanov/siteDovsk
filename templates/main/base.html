@@ -19,6 +19,10 @@
             <div class="logo_wrap">
                 <div id="header_logo"><img src="/static/main/img/logo.png"></div>
             </div>
+            <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
         <ul class="navi">
             <a class="navi_lnk" href="{% url 'home' %}"><li>Главная</li></a>
             <a class="navi_lnk" href="{% url 'departments' %}"><li>Отделы</li></a>
@@ -42,7 +46,7 @@
             <div class="footer-block">
                 <div class="footer-element"><img src="/static/main/img/email.png"><a href="email: goshos-nan@yandex.by"> goshos-nan@yandex.by</a></div>
                 <div class="footer-element"><img src="/static/main/img/Phone.png"><a href="tel:+375 2339 774 62"> +375 2339 774 62</a></div>
-                <div class="footer-element"><img src="/static/main/img/fax.png"><a href="tel: +375 2339 77 814">+375 2339 77 814</a></div>    
+                <div class="footer-element"><img src="/static/main/img/fax.png"><a href="tel: +375 2339 77 814"> +375 2339 77 814</a></div>    
             </div>
             <div class="footer-block">
                 <div class="footer-element">Время работы:</div>
@@ -50,12 +54,12 @@
                 <div class="footer-element">обеденный перерыв 12.00-13.00,</div>
                 <div class="footer-element">выходной – сб., вс.</div>
             </div>
-            <div class="footer-block">
-                <div class="footer-element">Copyrights 2022</div>
-                <div class="footer-element">All rights reserved</div>
-                <div class="footer-element">Based on <a href="https://www.djangoproject.com/">Django</a></div>
-                <div class="footer-element">Developer's contacts: <a href="tel: +375292779771">+375 29 277 97 71</a></div>
-            </div>
+        </div>
+        <div class="footer-block-straight">
+            <div class="footer-element-straight">Copyrights 2022</div>
+            <div class="footer-element-straight">All rights reserved</div>
+            <div class="footer-element-straight">Based on <a href="https://www.djangoproject.com/">Django</a></div>
+            <div class="footer-element-straight">Developer's contacts: <a href="tel: +375292779771">+375 29 277 97 71</a></div>
         </div>
     </div>
 </body>
